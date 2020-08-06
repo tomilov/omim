@@ -63,9 +63,7 @@ void SetUnavailable(search::Results const & filteredOut, SearchMarks & searchMar
     return;
 
   for (auto const & filtered : filteredOut)
-  {
     searchMarks.SetUnavailable(filtered.GetFeatureID(), "booking_map_component_availability");
-  }
 }
 
 void SetUnavailable(std::vector<FeatureID> const & filteredOut, SearchMarks & searchMarks)
@@ -73,10 +71,7 @@ void SetUnavailable(std::vector<FeatureID> const & filteredOut, SearchMarks & se
   if (filteredOut.empty())
     return;
 
-  for (auto const & filtered : filteredOut)
-  {
-    searchMarks.SetUnavailable(filtered, "booking_map_component_availability");
-  }
+  searchMarks.SetUnavailable(filteredOut, "booking_map_component_availability");
 }
 }  // namespace
 
