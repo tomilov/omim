@@ -68568,10 +68568,6 @@ colors {
     color: 352205
   }
   value {
-    name: "RatingHorrible"
-    color: 15088685
-  }
-  value {
     name: "BookmarkTeal"
     color: 42380
   }
@@ -68633,15 +68629,11 @@ colors {
   }
   value {
     name: "RatingGood"
-    color: 9682745
+    color: 3968060
   }
   value {
     name: "SpeedCameraMarkBg"
     color: 16064048
-  }
-  value {
-    name: "RatingExcellent"
-    color: 3968060
   }
   value {
     name: "BookmarkCyan"
@@ -68702,6 +68694,10 @@ colors {
     color: 1545508592
   }
   value {
+    name: "SearchmarkNotAvailable"
+    color: 5862272
+  }
+  value {
     name: "TrafficG5"
     color: 3773998
   }
@@ -68711,7 +68707,7 @@ colors {
   }
   value {
     name: "RatingNone"
-    color: 5862272
+    color: 2399474
   }
   value {
     name: "RouteMarkSecondaryTextOutline"
@@ -68730,12 +68726,16 @@ colors {
     color: 4666933
   }
   value {
-    name: "TransitStopInnerMarker"
-    color: 16777215
+    name: "RatingUGC"
+    color: 2399474
   }
   value {
-    name: "RatingLocalAds"
-    color: 2399474
+    name: "RouteArrowsMaskBicycle"
+    color: 3432785840
+  }
+  value {
+    name: "TransitStopInnerMarker"
+    color: 16777215
   }
   value {
     name: "TrackHumanSpeed"
@@ -68838,10 +68838,6 @@ colors {
     color: 2399474
   }
   value {
-    name: "RatingNormal"
-    color: 16762880
-  }
-  value {
     name: "RoadShieldRedBackground"
     color: 15086900
   }
@@ -68865,8 +68861,8 @@ colors {
     color: 1308622847
   }
   value {
-    name: "RouteArrowsMaskBicycle"
-    color: 3432785840
+    name: "SearchmarkSelectedNotAvailable"
+    color: 15754290
   }
   value {
     name: "RatingBad"
@@ -68879,6 +68875,10 @@ colors {
   value {
     name: "TrackCarSpeed"
     color: 8163038
+  }
+  value {
+    name: "SearchmarkPreparing"
+    color: 5862272
   }
   value {
     name: "TrafficG2"
