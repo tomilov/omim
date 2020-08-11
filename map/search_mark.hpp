@@ -150,6 +150,8 @@ private:
 
   static std::map<std::string, m2::PointF> m_searchMarksSizes;
 
+  mutable std::optional<m2::PointD> m_maxDimension;
+
   std::set<FeatureID> m_visited;
   // The value is localized string key for unavailability reason.
   std::map<FeatureID, std::string> m_unavailable;

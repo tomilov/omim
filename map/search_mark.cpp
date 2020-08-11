@@ -745,10 +745,13 @@ void SearchMarks::SetBookmarkManager(BookmarkManager * bmManager)
 
 m2::PointD SearchMarks::GetMaxDimension(ScreenBase const & modelView) const
 {
+  if (m_maxDimension && !m_maxDimension->IsAlmostZero())
+    return *m_maxDimension;
+
   if (!HaveSizes())
     return {};
 
-  m2::PointD markSize;
+  m2::PointD & markSize = m_maxDimension.emplace();
   auto const updateMarkSize = [&markSize](std::optional<m2::PointD> pixelSize)
   {
     if (!pixelSize)
