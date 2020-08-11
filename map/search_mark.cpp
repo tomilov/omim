@@ -743,20 +743,17 @@ void SearchMarks::SetBookmarkManager(BookmarkManager * bmManager)
   m_bmManager = bmManager;
 }
 
-double SearchMarks::GetMaxDimension(ScreenBase const & modelView) const
+m2::PointD SearchMarks::GetMaxDimension(ScreenBase const & modelView) const
 {
   if (!HaveSizes())
-    return 0.0;
-
-  double const pixelToMercator = modelView.GetScale();
+    return {};
 
   m2::PointD markSize;
-  auto const updateMarkSize = [&markSize, &pixelToMercator](std::optional<m2::PointD> pixelSize)
+  auto const updateMarkSize = [&markSize](std::optional<m2::PointD> pixelSize)
   {
     if (!pixelSize)
       return;
 
-    *pixelSize *= pixelToMercator;
     if (markSize.x < pixelSize->x)
       markSize.x = pixelSize->x;
     if (markSize.y < pixelSize->y)
@@ -779,7 +776,13 @@ double SearchMarks::GetMaxDimension(ScreenBase const & modelView) const
     }
   }
 
-  return std::max(markSize.x, markSize.y);
+  // factor to roughly account for the width addition of price/pricing text
+  double constexpr kBadgeTextFactor = 2.5;
+  markSize.x *= kBadgeTextFactor;
+
+  double const pixelToMercator = modelView.GetScale();
+  markSize *= pixelToMercator;
+  return markSize;
 }
 
 // static

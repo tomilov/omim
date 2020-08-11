@@ -110,7 +110,7 @@ public:
   void SetDrapeEngine(ref_ptr<df::DrapeEngine> engine);
   void SetBookmarkManager(BookmarkManager * bmManager);
 
-  double GetMaxDimension(ScreenBase const & modelView) const;
+  m2::PointD GetMaxDimension(ScreenBase const & modelView) const;
 
   // NOTE: Vector of features must be sorted.
   void SetPreparingState(std::vector<FeatureID> const & features, bool isPreparing);
